@@ -2,6 +2,7 @@
 #define SHORT_WAIT 125
 #define LONG_WAIT 250
 #define TIMES 3
+#define PERIOD 100
 
 void setup() {
   pinMode(myPIN, OUTPUT);
@@ -29,16 +30,10 @@ void loop() {
   for (int i = 0; i < TIMES; i++) {
     short_blinker();
   }
+  delay(PERIOD);
   /* long blink 3 times */
   for (int i = 0; i < TIMES; i++) {
     long_blinker();
   }
-  /* short blink 3 times */
-  for (int i = 0; i < TIMES; i++) {
-    short_blinker();
-  }
-  /* long blink 3 times */
-  for (int i = 0; i < TIMES; i++) {
-    long_blinker();
-  }
+  delay(PERIOD);
 }
